@@ -14,56 +14,48 @@ save.addEventListener("click", function () {
         
     
         const etareas = document.createElement("h2")
-        const bguardar =document.createElement("button")
-        const guardarTE =document.createElement("button")
-        
-        
+        const beditar =document.createElement("button")
+        const beliminar =document.createElement("button")
+        const bguardar = document.createElement("button")
+        const divHijo= document.createElement("div")
+        const inputEdita=document.createElement("input")
         
         etareas.innerHTML = tareas.value
-        tarea.appendChild(etareas)
-        
+
+        beditar.innerHTML="Editar"
+        beliminar.innerHTML="Eliminar"
+
         etareas.innerText = tareas.value + " " + date.value
 
-        const boton =document.createElement("button")
-        
-        boton.innerHTML = "Eliminar"
-        tarea.appendChild(boton)
+        divHijo.appendChild(etareas)
+        divHijo.appendChild(beliminar)
+        divHijo.appendChild(beditar)
 
+        tarea.appendChild(divHijo)
 
-
-        boton.addEventListener("click", function () {
+        bguardar.innerText="Guardar"
+      
+    
+        beliminar.addEventListener("click",function () {
             
-         const div = document.createElement("div")
-
-          div.appendChild(etareas)
-          div.appendChild(bguardar)
-          div.appendChild(guardarTE)
-
-        
-            tarea.removeChild(boton)
-
-            tareas.appendChild(div)
+            divHijo.remove()
         })
 
-        bguardar.innerHTML = "Editar"
-        tarea.appendChild(bguardar)
-
-        guardarTE.innerHTML = "Guardar"
-        tarea.appendChild(guardarTE)
-
-
-        bguardar.addEventListener("click", function () {
-
-          let inputEdit =document.createElement("input")
-
-            bguardar.appendChild(inputEdit)
+        beditar.addEventListener("click",function () {
             
+            divHijo.appendChild(bguardar)
+           divHijo.appendChild(inputEdita)
+          
+
         })
 
+        bguardar.addEventListener("click",function () {
+            
+            etareas.innerText = inputEdita.value
+        })
 
+ 
         
-
-
     }else{
 
         if (tarEvents.value === "event") {
@@ -71,6 +63,46 @@ save.addEventListener("click", function () {
             const Eeventos = document.createElement("h2")
             Eeventos.innerHTML = date.value
             evento.appendChild(Eeventos)
+
+           const bbeditar =document.createElement("button")
+           const bbeliminar =document.createElement("button")
+           const bbguardar = document.createElement("button")
+           const div= document.createElement("div")
+           const inputEdit=document.createElement("input")
+
+           Eeventos.innerHTML = evento.value
+
+           bbeditar.innerHTML="Editar"
+           bbeliminar.innerHTML="Eliminar"
+           bbguardar.innerText= "Guardar"
+
+           Eeventos.innerText = tareas.value + " " + date.value
+
+          div.appendChild(Eeventos)
+          div.appendChild(bbeliminar)
+          div.appendChild(bbeditar)
+
+           evento.appendChild(div)
+
+           bbeliminar.addEventListener("click", function () {
+            
+            div.remove()
+
+           })
+
+           bbeditar.addEventListener("click", function () {
+            
+            div.appendChild(inputEdit)
+            div.appendChild(bbguardar)
+
+           })
+
+           bbguardar.addEventListener("click", function () {
+            
+            Eeventos.innerText = inputEdit.value
+
+           })
+
 
         }
     }
