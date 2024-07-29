@@ -26,6 +26,8 @@ boton.addEventListener("click", function () {
     
     }
 
+    alert("Su registro fue exitoso")
+
 
     lista.push(persona)
     console.log(lista);

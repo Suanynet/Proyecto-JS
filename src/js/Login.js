@@ -20,6 +20,8 @@ botonI.addEventListener("click", function () {
         }
     }
 
+    alert("Su ingreso fue exitoso")
+
 
 })
 
