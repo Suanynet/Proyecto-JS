@@ -100,6 +100,7 @@ save.addEventListener("click", function () {
            bbguardar.addEventListener("click", function () {
             
             Eeventos.innerText = inputEdit.value
+            console.log(1);
 
            })
 
