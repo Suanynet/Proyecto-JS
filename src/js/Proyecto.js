@@ -6,15 +6,21 @@ const tarEvents =document.getElementById("tarEvents")
 const tarea =document.getElementById("tarea")
 const evento =document.getElementById("evento")
 
-let lista2 = []
+let listaTarea = []
+let listaEvento = []
 
 
 save.addEventListener("click", function () {
     
-    lista2.push(tareas.value + " " + date.value)
+    listaTarea.push(tareas.value + " " + date.value)
 
-    localStorage.setItem("lista2", JSON.stringify(lista2)) || []
-    console.log(lista2);
+    localStorage.setItem("listaTareas", JSON.stringify(listaTarea)) || []
+
+
+    listaEvento.push(tareas.value + " " + date.value)
+
+    localStorage.setItem("listaEventos", JSON.stringify(listaEvento)) || []
+
 
     if (tarEvents.value === "tarea") {
         
@@ -121,4 +127,27 @@ save.addEventListener("click", function () {
 
 function listaI() {
     
+    
+   let valor = JSON.parse(localStorage.getItem("listaTareas"))||[]
+
+   console.log(valor);
+   for (let index = 0; index < valor.length; index++) {
+
+
+    let h2 =document.createElement("h2")
+
+    h2.innerHTML = valor[index]
+
+    tarea.appendChild(h2)
+
+
+    
+    
+   }
+
+
+
+
 }
+
+listaI()
