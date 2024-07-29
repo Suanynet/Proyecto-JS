@@ -9,12 +9,12 @@ const evento =document.getElementById("evento")
 let lista2 = []
 
 
-
 save.addEventListener("click", function () {
     
     lista2.push(tareas.value + " " + date.value)
 
     localStorage.setItem("lista2", JSON.stringify(lista2)) || []
+    console.log(lista2);
 
     if (tarEvents.value === "tarea") {
         
@@ -114,6 +114,11 @@ save.addEventListener("click", function () {
         }
     }
 
-    
+
 
 })
+
+
+function listaI() {
+    
+}
