@@ -8,8 +8,9 @@ const boton =document.getElementById("boton")
 
 const lista = JSON.parse(localStorage.getItem("lista"))||[];
 
-boton.addEventListener("click", function () {
-    
+boton.addEventListener("click", function () { 
+        
+
     let cajitanname = nname.value
     let cajitalast = lastname.value
     let cajitausser = usser.value
@@ -23,10 +24,13 @@ boton.addEventListener("click", function () {
         Usuario: cajitausser,
         Correo: cajitacorreo,
         Contraseña: cajitafuerte
+
+        
     
     }
 
-    alert("Su registro fue exitoso")
+    
+    
 
 
     lista.push(persona)
@@ -35,6 +39,7 @@ boton.addEventListener("click", function () {
     localStorage.setItem("lista", JSON.stringify(lista))
 
 
+    
 
 
 })
