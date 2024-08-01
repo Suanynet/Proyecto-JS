@@ -232,7 +232,7 @@ function listaE() {
     buttoneditar.innerHTML= "Editar"
     buttonguardar.innerHTML = "Guardar"
     
-
+    divE.appendChild(etih2)
     divE.appendChild(buttoneliminar)
     divE.appendChild(buttoneditar)
     divE.appendChild(buttonguardar)
@@ -257,6 +257,8 @@ function listaE() {
         
         divE.appendChild(buttonguardar)
         divE.appendChild(inputeditar2)
+
+        
 
     })
 
